@@ -1,0 +1,29 @@
+{
+  "name": "fullstackapp",
+  "version": "1.0.0",
+  "description": "Full-stack social post composer with React and Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test --prefix server",
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "dev:client": "npm run dev --prefix client",
+    "dev:server": "npm run dev --prefix server",
+    "build": "npm run build --prefix client",
+    "lint": "npm run lint --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sky3117/fullstackapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sky3117/fullstackapp/issues"
+  },
+  "homepage": "https://github.com/sky3117/fullstackapp#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  },
+  "private": "true"
+}
