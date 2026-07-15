@@ -1,8 +1,17 @@
 import { Router } from 'express'
+import { rateLimit } from 'express-rate-limit'
 import Post from '../models/Post.js'
 import { validatePostPayload } from '../utils/validatePost.js'
 
 const postsRouter = Router()
+const postsRateLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  limit: 60,
+  standardHeaders: true,
+  legacyHeaders: false
+})
+
+postsRouter.use(postsRateLimiter)
 
 postsRouter.get('/', async (_request, response, next) => {
   try {
